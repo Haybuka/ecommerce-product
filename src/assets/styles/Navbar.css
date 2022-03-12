@@ -1,0 +1,22 @@
+header nav{
+    @apply relative py-6 lg:border-b-2 flex justify-between items-center;
+}
+header .nav-main{
+    @apply lg:flex-row flex lg:justify-between items-center;
+}
+header .navbar{
+    @apply lg:block pl-6 lg:pl-0 absolute top-0 pt-10 -left-5 lg:-left-0 bg-white w-4/5 h-screen lg:h-auto lg:bg-transparent lg:static lg:top-auto lg:p-0 lg:w-auto;
+    transition:  all 0.5s ease-in;
+}
+header .navbar-item{
+    @apply my-6 font-bold text-black block capitalize lg:inline-block lg:mx-5 lg:my-0 lg:text-gray-500;
+}
+header .navbar-close{
+    @apply mb-14 font-bold text-black block capitalize lg:hidden cursor-pointer;
+}
+header .nav-sub{
+    @apply flex items-center;
+}
+header .nav-sub-item{
+    @apply capitalize mx-4 lg:mx-6 text-gray-500 cursor-pointer;
+}
