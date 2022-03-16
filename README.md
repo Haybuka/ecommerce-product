@@ -76,7 +76,7 @@ To see how you can add code snippets, see below:
 }
 ```
 ```js
-updating state based on an action
+updating quantity state based on action
 switch (action) {
        case  "add":
          setQuantity(quantity + 1)
@@ -87,6 +87,31 @@ switch (action) {
        default:
          break;
      }
+
+context setup
+
+export const productContext = createContext()
+export function ProductProvider({children}) {
+    let [cartItem,setCartItem] = useState([])
+     let [toggleNav,setToggleNav] = useState(false)
+    
+    let products = [
+        {}
+      ]
+
+      function updateCart(cartUpdate,id){
+        setCartItem([ cartUpdate])
+      }
+      function deleteItem(id){
+        let updatedCart = cartItem.filter(item => item.id !== id );
+        setCartItem(updatedCart)
+      }
+  return (
+    <productContext.Provider value={{products,updateCart,deleteItem,cartItem,toggleNav,setToggleNav}}>
+        {children}
+    </productContext.Provider>
+  )
+}
 ```
 
 If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.

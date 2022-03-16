@@ -1,8 +1,11 @@
-import React, { memo, useState } from 'react'
+import React, { memo, useState,useContext } from 'react'
+import { productContext } from '../context/productcontext';
 import { LightBox } from 'react-lightbox-pack'; 
 import "react-lightbox-pack/dist/index.css";
 import '../assets/styles/Product.css'
-function Product({updateCart,productPrice,baseProduct,discount,description,productImages,productName,discountPrice,id}) {
+function Product({productPrice,baseProduct,discount,description,productImages,productName,discountPrice,id}) {
+  const {updateCart} = useContext(productContext)
+
   //lightbox state
   const [toggle, setToggle] =  useState(false);
 	const [sIndex, setSIndex] =  useState(0);
@@ -13,21 +16,25 @@ function Product({updateCart,productPrice,baseProduct,discount,description,produ
 	};
   //end of lightbox state
   let [image,setImage] = useState(baseProduct)
-  let [quantity,setQuantity] = useState(0)
+  let [quantity,setQuantity] = useState(1)
   function handleChange(product,index){
     setImage(product.target.src)
   }
   function handleCount(action){
-     switch (action) {
-       case  "add":
-         setQuantity(quantity + 1)
-         break;
-       case "minus":
-          setQuantity(quantity - 1)
+    if(quantity !== 0){
+      switch (action) {
+        case  "add":
+          setQuantity(quantity + 1)
           break;
-       default:
-         break;
-     }
+        case "minus":
+           setQuantity(quantity - 1)
+           break;
+        default:
+          break;
+      }
+    } else{
+      setQuantity(1)
+    }
   }
   function handleSubmit(e,id){
      e.preventDefault()
@@ -76,10 +83,10 @@ function Product({updateCart,productPrice,baseProduct,discount,description,produ
          <p className='text-gray-500 text-justify'> {description}</p>
          <aside className='Product-detail-action'>
            <div className='flex items-center'>
-              <h4 className='text-2xl font-bold lg:my-1'>${productPrice}.00</h4>
+              <h4 className='text-2xl font-bold lg:my-1'>${discountPrice}.00</h4>
               <span className='Product-discount'> {discount}%</span>
            </div>
-           <p className='text-gray-500 line-through text-base'> ${discountPrice}.00</p>
+           <p className='text-gray-500 line-through text-base'> ${productPrice}.00</p>
          </aside>
          <form className='product-action lg:flex justify-between' onSubmit={ e=>handleSubmit(e,id)}>
             <div className='Product-count'>

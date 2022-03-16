@@ -2,6 +2,7 @@ import React from 'react'
 import Product from './Product'
 
 function Cart({cartItem,deleteItem}) {
+  
   return (
     <section className='Cart-section' >
            <h3 className=''>Cart</h3>

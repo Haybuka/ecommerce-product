@@ -1,9 +1,12 @@
-import { useState,memo } from 'react'
+import { useState,memo,useContext } from 'react'
 import Cart from './Cart.js'
+import { productContext } from '../context/productcontext';
 import avatar from '../assets/images/image-avatar.png'
 import prodThum from '../assets/images/image-product-1-thumbnail.jpg'
 import '../assets/styles/Navbar.css'
-function Navbar({toggleNav,setToggleNav,cartItem,deleteItem}) {
+function Navbar() {
+   const {cartItem,deleteItem,toggleNav,setToggleNav} = useContext(productContext)
+
     let [cart,setCart] = useState(false)
     function handleNavToggle(){
         setToggleNav(!toggleNav)
