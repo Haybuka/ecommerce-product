@@ -55,7 +55,6 @@ function Product({productPrice,baseProduct,discount,description,productImages,pr
               <img 
                key={index}
 					     style={{ maxHeight:  "80vh", maxWidth:  "50vw" }}
-				      //  onClick={handleChange} 
 				       onClick={handleChange} 
                onDoubleClick ={()=> lightBoxHandler(true, index)}
                src={item.image} alt={item.title}
