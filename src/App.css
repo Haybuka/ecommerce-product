@@ -1,3 +1,4 @@
 .App{
-    @apply md:w-4/5 md:mx-auto;
+    @apply md:w-4/5 md:mx-auto font-primary;
 }
+

@@ -58,8 +58,8 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - CSS Grid
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
+- [Lightbox](https://reactjsexample.com/a-minimal-lightbox-package-for-react/) - React framework
+- [Tailwind css](tailwindcss.com/) - For styles
 
 **Note: These are just examples. Delete this note and replace the list above with your own choices**
 
@@ -69,18 +69,24 @@ Use this section to recap over some of your major learnings while working throug
 
 To see how you can add code snippets, see below:
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
+
 ```css
 .proud-of-this-css {
   color: papayawhip;
 }
 ```
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
+updating state based on an action
+switch (action) {
+       case  "add":
+         setQuantity(quantity + 1)
+         break;
+       case "minus":
+          setQuantity(quantity - 1)
+          break;
+       default:
+         break;
+     }
 ```
 
 If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
@@ -95,8 +101,8 @@ Use this section to outline areas that you want to continue focusing on in futur
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [React Lightbox](https://reactjsexample.com/a-minimal-lightbox-package-for-react/) - React lightbox is a tool that does as its name suggests, its used to create details on images
+- [Hero Icon](https://heroicons.dev/) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
 
 **Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
 
